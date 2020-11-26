@@ -4,7 +4,7 @@ clear; close all; clc
 [ProjSet, fs, info, ROI, fname]=Call_default_PS;
 [subj, subn] = CallSubj_PS;
 Phipath=ProjSet.PhiInfopath;
-ROIs=ROI.Grid{1};
+ROIs={ROI.Grid{1}};
 periodicity=info.periodicity;
 design_name = ['Grid', num2str(periodicity), '_F01F02_5s']; %Make the same with it defined in Get_Phi.m
 Nday=info.Nday;
