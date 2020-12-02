@@ -1,3 +1,3 @@
 function sem=SEM(X)
-    sem=nanstd(X)/sqrt(sum(~isnan(X(:,1)))-1);
+    sem=nanstd(X)/sqrt(sum(~isnan(X(:,1))));
 end
