@@ -64,7 +64,9 @@ function Tmat = extractT(RDMpath, spmTname, setups)
     parfor spmTi=1:numel(spmTname)
         spmTpath=[RDMpath, filesep, spmTname{spmTi}];
         data = spm_read_vols(spm_vol(deblank(spmTpath)));
-        zdata=nanzscore(data.*setups.mask);
+        maskeddata=data.*mask;
+	    zdata=(maskeddata-nanmean(maskeddata(:))) / nanstd(maskeddata(:));
+	    %zdata=nanzscore(data.*mask);
         Tmat(spmTi,:) = zdata(:);
     end
 end
