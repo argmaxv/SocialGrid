@@ -1,5 +1,5 @@
 %% Grid Category
-    % The inferred vectors (Theta-Phi) are categoriezed to the bins
+    % The inferred vectors (Theta-Phi) are categorized to the bins
     % according to the periodicity of interests
     % It returns AltPeriodicity which includes 1) periodicities :4~8
     % 2) onoff : 1, aligned (on-grid); 0, misaligned (off-grid)
