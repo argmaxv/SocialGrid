@@ -1,5 +1,5 @@
 % Get_Phi.m
-% Extract betas from the ROI and compute Phi of each participants
+% Extract betas from the ROI and compute Phi of each of the participants
 % by A Park 2018/03/20
 
 %% Path setup
