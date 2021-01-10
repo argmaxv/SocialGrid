@@ -3,7 +3,7 @@
     % according to the periodicity of interests
     % It returns AltPeriodicity which includes 1) periodicities :4~8
     % 2) onoff : 1, aligned (on-grid); 0, misaligned (off-grid)
-    % 3) cat: category of the bin (totall num. bin = periodicity*2-1 so, 11 bins in six-fold periodicity)
+    % 3) cat: category of the bin (total num. bin = periodicity*2-1 so, 11 bins in six-fold periodicity)
 
 clear; close all; clc
 [ProjSet, fs, info, ROI, fname]=Call_default_PS;
