@@ -11,7 +11,7 @@ function [a] =faceplace(face,type,sub)
             
             if strcmp(type,'p') %placement
                 clear pos
-                pos=load('/home/ravic/Pr4.PF/Placement/Placement_new/place_coor25.mat');
+                pos=load('place_coor.mat');
                 a(lnth,1)=pos.place.x(sub,face(lnth));
                 a(lnth,2)=pos.place.y(sub,face(lnth));
         
