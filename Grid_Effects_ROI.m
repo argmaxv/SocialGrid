@@ -27,7 +27,8 @@ svoption=1;           %1, to save the results (in svfolder, below). 0, otherwise
 PhiROI=ROI.Grid{1};                    % ROI for initial orientation, EC_Grid;
 GrdOrientation=PhiROI(1:end-5); % ROI for initial orientation (e.g. 'EC', for save file names)
 svfolder=[ProjSet.Phipath, 'GridCategory_', GrdOrientation]; %Where to save the results
-zBdatapath=[ProjSet.PhiInfopath, PhiROI, fs, 'zB']; %Where zB (Beta, brain activity) are (generated from EachDec_Beta_Collect.m) 
+zBdatapath=[ProjSet.PhiInfopath, PhiROI, fs, 'zB']; %Where zB (Beta, brain activity) are (generated from EachDec_Beta_Collect.m)
+%e.g. ../data/Analysis Phi/GeneratedModel/Ec_Grid/zB
 
 % Initializing num. of figures.
 fig_cat_n=0;
@@ -57,7 +58,8 @@ for Phii=1:numel(PhiType) % Apply differnt Phi (corss validation across blocks a
     % the category of bin according the the inferred vector angles, on and
     % off grids (aligned or not to the grid orientation), and periodicities
     % (not only 6-fold but also alternative periodicities).
-    load(fullfile('/home/ravic/Pr4.PF/Imaging/Analysis/Analysis Phi/GeneratedModel/EC_Grid/', ['GridCat_', PhiROI, '_', PhiType{Phii}, '.mat']));
+    load(fullfile([ProjSet.PhiInfopath, PhiROI, fs], ['GridCat_', PhiROI, '_', PhiType{Phii}, '.mat'])); %e.g. load('../data/Analysis Phi/GeneratedModel/Ec_Grid/GridCat_EC_Grid_PhixB.mat')
+
     if svoption
         if ~exist(svfolder,'dir')
             mkdir(svfolder);
@@ -75,6 +77,8 @@ for Phii=1:numel(PhiType) % Apply differnt Phi (corss validation across blocks a
         indexvoi=indexvoi0{ri};
         gridcatfile=dir([zBdatapath, fs, curROI1, '*.mat']);
         load(fullfile(gridcatfile.folder, gridcatfile.name));   % Load the Beta activity extracted from the ROI
+	%e.g. load('../data/Analysis Phi/GeneratedModel/Ec_Grid/zB/Ec_xB.mat')
+	
         zB=zB.*Accuracy;        % Masking the incorrect trials.
         fprintf('\n ----------- %s ----------- \n', indexvoi);
 
