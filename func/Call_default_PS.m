@@ -16,7 +16,7 @@ function [ProjSet, fs, info, ROI, fname]=Call_default_PS
     info.prefix.day1='P';
     info.prefix.day2='Q';
     info.prefix.Run='R'; %img/hdr files are in the folder, R1, R2, and R3 according to in which block there were acquired.
-    info.PhiModel='Grid6_F01_F02_F12_FDec_5s';
+    info.PhiModel='Grid6_F01F02_5s'; % name of individual grid orientation (Phi) file (e.g. ../data/Phi_Grid6_F01F02_5s_EC_Grid.mat)
 %% ROIs
 % ROIs should have the same name (in ROIpath)
     ROI.Ana={'HCr', 'HCl', 'ECr', 'ECl', 'M1r', 'M1l'}; % Anatomically defined ROIs
