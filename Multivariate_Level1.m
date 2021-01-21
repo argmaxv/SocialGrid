@@ -46,7 +46,7 @@ for s = 1:nsubj
         fmri_spec.timing.RT       = 1.3;        % TR
         fmri_spec.timing.fmri_t   = 46;        % microtime resolution (time-bins per scan) = slices
         fmri_spec.timing.fmri_t0  = 23;       % reference slice from pre-processing
-        fmri_spec.mask            = {'/usr/local/MATLAB/spm12/tpm/mask_ICV.nii'};
+        fmri_spec.mask            = {[ProjSet.spmdir, fs, 'tpm', fs, 'mask_ICV.nii']};
         fmri_spec.mthresh         = -Inf;        %Mask
         fmri_spec.volt            = 1;
 
