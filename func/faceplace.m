@@ -11,7 +11,7 @@ function [a] =faceplace(face,type,sub)
             
             if strcmp(type,'p') %placement
                 clear pos
-                pos=load('place_coor.mat');
+                pos=load('Place_coord16.mat'); %../func/Place_coord16.mat
                 a(lnth,1)=pos.place.x(sub,face(lnth));
                 a(lnth,2)=pos.place.y(sub,face(lnth));
         
@@ -33,7 +33,7 @@ function [a] =faceplace(face,type,sub)
             
             elseif strcmp(type,'m') %MDS position
                 clear pos pos0
-                load('MDS_coord16.mat'); %pos0 inlcude MDS coordinate of each participant
+                load('MDS_coord16.mat'); %pos0 inlcude MDS coordinate of each participant %../func/MDS_coord16.mat
                 pos=pos0.mdspos.HC; %=pos0.mdspos.EC
                 a(lnth,1)=pos.place.x(sub,face(lnth));
                 a(lnth,2)=pos.place.y(sub,face(lnth));
